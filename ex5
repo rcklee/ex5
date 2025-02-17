@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Addessbook {
+    static ArrayList<Person> pplList = new ArrayList<Person>();
+
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        String taco =" ";
+        while(true){
+            System.out.println("What would you like to name your creation");
+            String name2 = input.nextLine();
+           
+
+            System.out.println("Now, how old would you like your creation to be?");
+            int age2 = input.nextInt();
+            input.nextLine();
+            System.out.println("Please provide their email address");
+            String email2 = input.nextLine();
+            
+    pplList.add(new Person(name2, age2, email2));
+    pplList.add(new Person("2", 3, "email2"));
+    System.out.println(pplList);
+            System.out.println("Would you like to add another person (Yes/No)");
+            taco = input.nextLine();             
+            if(taco.equals("No")){
+                break;
+            }
+            
+    }
+        //create the while loop to ask if they would like to add ppl
+
+
+        //find email based on name
+
+
+    }
+}
