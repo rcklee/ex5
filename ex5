@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Addessbook {
     static ArrayList<Person> pplList = new ArrayList<Person>();
+    static HashMap<String, String> pplList2 = new HashMap<String, String>();
+
 
     static Scanner input = new Scanner(System.in);
 
@@ -19,21 +22,37 @@ public class Addessbook {
             input.nextLine();
             System.out.println("Please provide their email address");
             String email2 = input.nextLine();
-            
-    pplList.add(new Person(name2, age2, email2));
-    pplList.add(new Person("2", 3, "email2"));
-    System.out.println(pplList);
+            pplList2.put(email2, name2);
+
+
             System.out.println("Would you like to add another person (Yes/No)");
             taco = input.nextLine();             
-            if(taco.equals("No")){
+            if(taco.equalsIgnoreCase("No")){
                 break;
             }
+
+
+
             
     }
-        //create the while loop to ask if they would like to add ppl
+    System.out.println("Would you like to look someone up by emailaddress? (Yes/No)");
+    String lookup = input.nextLine();
 
+    while(true){
+        if(lookup.equalsIgnoreCase("Yes")){
+            System.out.println("What's the email?");
+            String email1 = input.nextLine();
 
-        //find email based on name
+            System.out.println(email1+ " belongs to " +pplList2.get(email1));
+            System.out.println("");
+            System.out.println("Would you like to look someone up by emailaddress? (Yes/No)");
+            lookup = input.nextLine();
+        }if(lookup.equalsIgnoreCase("No")){
+           System.out.println("Thank you for using the addressbook!"); 
+           break;
+        }
+    }
+
 
 
     }
